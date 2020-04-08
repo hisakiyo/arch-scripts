@@ -1,0 +1,4 @@
+#!/bin/bash
+rsh=$(echo "Enter" | dmenu -i -p "Search for videos")
+result=$(youtube-dl "ytsearch3:$rsh" --skip-download --get-title | dmenu -i -l 3)
+$(youtube-dl "ytsearch1:$result" -o - | mpv -)
